@@ -5,6 +5,11 @@ const connect = function() {
     port: 50541
   });
 
+
+  conn.on("connect", () => {
+    conn.write("Name: CDC");
+    console.log("Successfully connected to game server")
+  })
   // receives incoming msg and transmits to user
   conn.on("data", (data) => {
     console.log("Server says: ", data);
