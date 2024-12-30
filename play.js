@@ -24,9 +24,9 @@ const connect = function() {
 
   conn.setEncoding("utf8");
   
+  console.log("Connecting ...");
   return conn;
 };
 
 
-console.log("Connecting ...");
 connect();
