@@ -11,10 +11,13 @@ const connect = function() {
     console.log("Server says: ", data);
   });
 
+  // added error handling event to listen 
   conn.on("error", (error) => {
     console.log("Connection error: ", error)
   });
 
+
+  // added event to close connection server when no longer needed
   conn.on("end", () => {
     console.log("Connection to server has ended")
   });
