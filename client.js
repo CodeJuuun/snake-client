@@ -7,9 +7,16 @@ const connect = function() {
 
 
   conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+
     conn.write("Name: CDC");
-    console.log("Successfully connected to game server")
-  })
+    
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
+  });
+
+
   // receives incoming msg and transmits to user
   conn.on("data", (data) => {
     console.log("Server says: ", data);
