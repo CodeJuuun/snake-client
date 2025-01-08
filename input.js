@@ -1,5 +1,7 @@
 let connection;
 
+const { moveUp, moveLeft, moveDown, moveRight } = require("./constants")
+
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
@@ -12,20 +14,20 @@ const setupInput = function(conn) {
       process.exit();
     }
 
-    if (key === "w") {
+    if (key === moveUp) {
       connection.write("Move: up");
-    } else if (key === "a") {
+    } else if (key === moveLeft) {
       connection.write("Move: left");
-    } else if (key === "s") {
+    } else if (key === moveDown) {
       connection.write("Move: down");
-    } else if (key === "d") {
+    } else if (key === moveRight) {
       connection.write("Move: right");
     }
 
     if (key === "1") {
-      connection.write("Say: Watch out!")
+      connection.write("Say: Watch out!");
     } else if (key === "2") {
-      connection.write("Say: Hello world!")
+      connection.write("Say: Hello world!");
     }
   };
 
