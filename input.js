@@ -1,6 +1,6 @@
 let connection;
 
-const { moveUp, moveLeft, moveDown, moveRight } = require("./constants")
+const { moveUp, moveLeft, moveDown, moveRight } = require("./constants");
 
 const setupInput = function(conn) {
   connection = conn;
@@ -14,20 +14,26 @@ const setupInput = function(conn) {
       process.exit();
     }
 
-    if (key === moveUp) {
+    // use switch statements since there are many if cases for easier readibility
+    switch (key) {
+    case moveUp:
       connection.write("Move: up");
-    } else if (key === moveLeft) {
+      break;
+    case moveLeft:
       connection.write("Move: left");
-    } else if (key === moveDown) {
+      break;
+    case moveDown:
       connection.write("Move: down");
-    } else if (key === moveRight) {
+      break;
+    case moveRight:
       connection.write("Move: right");
+      break;
     }
 
     if (key === "1") {
       connection.write("Say: Watch out!");
     } else if (key === "2") {
-      connection.write("Say: Hello world!");
+      connection.write("Say: Good job!");
     }
   };
 
